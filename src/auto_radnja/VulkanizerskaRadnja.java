@@ -4,22 +4,39 @@ import java.util.LinkedList;
 
 import auto_radnja.gume.AutoGuma;
 
+/**
+ * Klasa VulkanizerskaRadnja koja predstavlja funkciju radnje
+ * 
+ * klasa ima listu guma sa svim gumama u radnji
+ * 
+ * @author Korisnik
+ *
+ */
+
 public abstract class VulkanizerskaRadnja implements Radnja {
+	/**
+	 * 
+	 * Lista guma koja je LinkedList i koja je inicijalizovana
+	 */
 
 	private LinkedList<AutoGuma> gume = new LinkedList<AutoGuma>();
 
 	
 	@Override
 	public void dodajGumu(AutoGuma a) {
+		
 		if (a == null)
 			throw new NullPointerException("Guma ne sme biti null");
 		if (gume.contains(a))
 			throw new RuntimeException("Guma vec postoji");
 		gume.addFirst(a);
 	}
+	
+	
 
 	@Override
 	public LinkedList<AutoGuma> pronadjiGumu(String markaModel) {
+		
 		if (markaModel == null)
 			return null;
 		LinkedList<AutoGuma> novaLista = new LinkedList<AutoGuma>();
