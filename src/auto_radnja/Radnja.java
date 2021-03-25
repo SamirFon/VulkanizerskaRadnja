@@ -11,7 +11,7 @@ import auto_radnja.gume.AutoGuma;
  *
  */
 
-public interface Radnja {
+public  interface Radnja {
 	/**
 	 * dodaje novu gumu u Radnju
 	 * @param a guma koja se dodaje

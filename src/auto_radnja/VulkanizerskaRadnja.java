@@ -13,7 +13,7 @@ import auto_radnja.gume.AutoGuma;
  *
  */
 
-public abstract class VulkanizerskaRadnja implements Radnja {
+public  class VulkanizerskaRadnja implements Radnja {
 	/**
 	 * 
 	 * Lista guma koja je LinkedList i koja je inicijalizovana
