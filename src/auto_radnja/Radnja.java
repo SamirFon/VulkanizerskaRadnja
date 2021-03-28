@@ -25,7 +25,7 @@ public  interface Radnja {
 	
 	/**
 	 * pronalazi gumu u vulkanizerskoj radnji
-	 * inicijalizuje listu LinkdeList novaLista
+	 * pravi novu listu LinkdeList novaLista
 	 * 
 	 * @param markaModel  marka i model kao jedan string
 	 * @param markaModel marka i model gume koji se trazi
@@ -35,6 +35,9 @@ public  interface Radnja {
 	 * @return novaLista vraca listu guma za zadatu marku i model
 	 */
 	
-	LinkedList<AutoGuma> pronadjiGumu(String markaModel);
-
+	public LinkedList<AutoGuma> pronadjiGumu(String markaModel);
+	
+	
+	
+	
 }

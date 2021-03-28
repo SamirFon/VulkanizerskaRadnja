@@ -101,15 +101,16 @@ class AutoGumaTest {
 	@ParameterizedTest
 	@CsvSource({
 		"150,150, true",
-		"20,150,false",
-		"150,20, false"
+		"140,150,false",
+		"150,160, false"
 	})
 	void testSetSirinaParam(int sirina, int sirina1,boolean eq) {
+		
 		a.setSirina(sirina);
 		
 		AutoGuma a1 = new AutoGuma();
 		a1.setSirina(sirina1);
-		assertEquals(eq, a.equals(a1));
+		assertEquals(eq,a.equals(a1));
 		
 	}
 	@Test
@@ -148,24 +149,24 @@ class AutoGumaTest {
 	
 	a.setMarkaModel("Pirelli");
 	a.setPrecnik(20);
-	a.setSirina(50);
+	a.setSirina(150);
 	a.setVisina(60);
 	
 	String guma = a.toString();
 	
 	assertTrue(guma.contains("Pirelli"));
 	assertTrue(guma.contains("20"));
-	assertTrue(guma.contains("50"));
+	assertTrue(guma.contains("150"));
 	assertTrue(guma.contains("60"));
 	}
 
 	@ParameterizedTest
 	@CsvSource({
 	
-	"Pirelli, 20,50,60,Pirelli,20,50,60, true",
-	"Pirelli, 20,50,60,Pirelli,20,60,60, false",
-	"Pirelli, 20,50,60,Tigar,20,50,60, false",
-	"Pirelli, 20,50,50,Pirelli,20,50,60, false",
+	"Pirelli, 20,150,60,Pirelli,20,150,60, true",
+	"Pirelli, 20,150,60,Pirelli,20,160,60, false",
+	"Pirelli, 20,150,60,Tigar,20,150,60, false",
+	"Pirelli, 20,150,50,Pirelli,20,150,60, false",
 	
 	
 	})
